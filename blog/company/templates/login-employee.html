@@ -1,0 +1,14 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<div class="form1">
+    <form action="" method="POST">
+        <table class="table">
+            {{form.as_table}}
+        </table>
+        {% csrf_token %}
+        <button type="reset" class="btn btn-outline-primary btn-block">clear</button>
+        <button class="btn btn-primary btn-block">Register</button>
+    </form>
+</div>
+{% endblock content %}

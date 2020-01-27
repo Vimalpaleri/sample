@@ -1,0 +1,9 @@
+{% extends 'body2.html' %}
+
+{% block content %}
+    <h1>CATEGORIES</h1>
+    {% for i in data %}
+    
+        <p><a href="{% url 'view_prod' i.id %}">{{ i.name }}</a><span><img src=" /media/{{i.image}} " width="50px" height="50px"></span></p>
+    {% endfor %}
+{% endblock content %}

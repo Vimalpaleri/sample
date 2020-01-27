@@ -1,0 +1,8 @@
+{% extends 'body2.html' %}
+
+{% block content %}
+    <h1>PRODUCTS</h1>
+    {% for i in data %}
+        <p>{{ i.pname }}</p>
+    {% endfor %}
+{% endblock content %}

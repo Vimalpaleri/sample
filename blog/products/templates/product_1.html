@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table view">
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    {% for p in data %}
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.brand }}</td>
+        <td>{{ p.quantity }}</td>
+        <td>{{ p.price }}</td>
+        <td>
+            <a href="{% url 'edit_products' p.id %}" class="view fa fa-edit"></a>
+            <button class="btn btn-link" onclick="deldata('{{p.id}}')"><span class="fa fa-trash"></span></button>
+        </td>
+                
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    function deldata(id){
+        var opt = confirm('Do you want to delete product'+id);
+        if(opt){
+            $.get("/products/delete-products1/"+id+"/",{},function(result){
+                if(result == 'deleted'){
+                    alert("Item deleted");
+                    location.reload();
+                }
+                else{
+                    alert("An error occured");
+                }
+            });
+        }
+    }
+</script>
+{% endblock %}

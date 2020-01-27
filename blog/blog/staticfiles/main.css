@@ -1,0 +1,16 @@
+body{
+    color:rgba(255, 0, 0, 0.911);
+    background-image: url("1113636.jpg");
+    background-size: cover;
+}
+.form1prop{
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: rgba(100,100,100,.5);
+    position: relative;
+    width: 40%;
+    left: 30;
+    height: 60;
+    top: 10;
+    padding-bottom: .5%;
+}

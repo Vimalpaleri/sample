@@ -1,0 +1,38 @@
+{% extends 'base22.html' %}
+{% block content %}
+<table class="table view">
+    <tr>
+        <th>Name</th>
+        <th>age</th>
+        <th>address</th>
+    </tr>
+    {% for p in data %}
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.address }}</td>
+        <td>
+            <a href="{% url 'edit_userr' p.id %}" class="view fa fa-edit"></a>
+            <button class="btn btn-link" onclick="deldata('{{p.id}}')"><span class="fa fa-trash"></span></button>
+        </td>
+                
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    function deldata(id){
+        var opt = confirm('Do you want to delete user'+id);
+        if(opt){
+            $.get("/anglink/delete-userr/"+id+"/",{},function(result){
+                if(result == 'deleted'){
+                    alert("Item deleted");
+                    location.reload();
+                }
+                else{
+                    alert("An error occured");
+                }
+            });
+        }
+    }
+</script>
+{% endblock %}

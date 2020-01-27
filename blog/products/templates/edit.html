@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center">EDIT</h1>
+
+<div class="form1prop prod">
+    
+    <form action="" method="POST">
+            <table class="table">
+            {{form.as_table}}
+            </table>
+        {% csrf_token %}
+        <button type="reset" class="btn btn-outline-primary btn-block">clear</button>
+        <button class="btn btn-primary btn-block" >save</button>
+    </form>
+
+</div>
+{% endblock %}
