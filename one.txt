@@ -1,1 +1,11 @@
-hi
+there are some apps in this project.
+1. products-
+    it is a app for adding some product,display , edit, delete.
+2. company-
+    it just for login and register by creating section
+3. ecom-
+    like a ecommerce website product categorisation, here we can add category, add product  based on added category, show catogery will show you the existing category and click the product under the category and select it.
+4. anglink-
+    it is for angular connection with django....i tried to display something from djanho to angular and one form that fill in angular and save it as backend django.
+    
+    
